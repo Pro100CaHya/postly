@@ -4,7 +4,7 @@ import Flex from "../layout/flex/Flex";
 import Button from "../button/Button";
 import Column from "../layout/column/Column";
 
-import { DOTS, usePagination } from "../../../modules/posts/hooks/usePagination";
+import { DOTS, usePagination } from "../../../hooks/usePagination";
 
 const Pagination = ({ setCurrentPage, currentPage, totalCount, limit, isPostsLoading }) => {
     const paginationRange = usePagination({
