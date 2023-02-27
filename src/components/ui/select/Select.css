@@ -1,0 +1,13 @@
+.select {}
+
+.select_size_xs {
+    padding: 5px 10px;
+    font-size: 1.15rem;
+    border-radius: 5px;
+}
+
+.select_style_primary {
+    background-color: var(--select-bg-color);
+    color: var(--select-text-color);
+    border: 1px solid var(--select-border-color);
+}

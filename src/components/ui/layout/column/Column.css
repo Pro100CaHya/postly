@@ -1,0 +1,30 @@
+.column {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.column_margin_0-5 {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.column_margin_5-0 {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.column_margin_5-5 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.column_margin_0-10 {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.column_margin_10-0 {
+    margin-left: 10px;
+    margin-right: 0px;
+}

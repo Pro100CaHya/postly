@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary-color: #fed2ff;
+    --bg-secondary-color: #fea8ff;
+    --text-primary-color: #39003A;
+    --text-secondary-color: #9d00a0;
+    --text-tertiary-color: #d245d4;
+    --button-bg-primary-color: #d245d4;
+    --button-text-primary-color: #39003A;
+    --button-border-primary-color: #39003A;
+    --button-bg-secondary-color: #ffe6ff;
+    --button-text-secondary-color: #39003A;
+    --button-border-secondary-color: #fd9dff;
+    --button-bg-secondary-active-color: #ffd4ff;
+    --button-text-secondary-active-color: #39003A;
+    --button-border-secondary-active-color: #fd9dff;
+    --button-bg-secondary-disabled-color: #eeceee;
+    --button-text-secondary-disabled-color: #39003A;
+    --button-border-secondary-disabled-color: #fd9dff;
+    --post-bg-primary-color: #ffe6ff;
+    --post-border-color: #fd9dff;
+    --select-bg-color: #fff;
+    --select-text-color: #39003A;
+    --select-border-color: #39003A;
+    --input-bg-color: #fff;
+    --input-text-color: #39003A;
+    --input-placeholder-color: #39003a70;
+    --input-border-color: #39003A;
+    --switch-bg-color: #fff;
+    --switch-button-color: #fea8ff;
+    --switch-border-color: #39003A;
+    --skeleton-loader-gradient-color: linear-gradient(110deg, #febeff 8%, #fecdff 18%, #fdcfff 33%, #fdc5ff 50%);
+    --error-bg-color: #ffe6ff;
+    --error-border-color: #fd9dff;
+    --error-text-color: #39003A;
+}
+
+html {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    color: var(--text-primary-color);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}

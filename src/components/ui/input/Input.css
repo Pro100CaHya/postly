@@ -1,0 +1,19 @@
+.input {}
+
+.input_size_xs {
+    padding: 5px 10px;
+    font-size: 1.15rem;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.input_style_primary {
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    border-color: var(--input-border-color);
+}
+
+.input_style_primary::placeholder {
+    color: var(--input-placeholder-color)
+}

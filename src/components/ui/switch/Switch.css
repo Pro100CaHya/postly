@@ -1,0 +1,66 @@
+.switch__checkbox {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.switch__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
+
+.switch__label .switch__button {
+    content: '';
+    position: absolute;
+    transition: 0.4s;
+    z-index: 3;
+}
+
+.switch__left-img {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 4;
+}
+
+.switch__right-img {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 4;
+}
+
+.switch__checkbox:checked + .switch__label .switch__button {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+.switch__label:active .switch__button {
+    width: 30px;
+}
+
+.switch_style_primary .switch__label {
+    background: var(--switch-bg-color);
+    border: 1px solid var(--switch-border-color);
+}
+
+.switch_style_primary .switch__button {
+    background: var(--switch-button-color);
+}
+
+.switch_size_xs .switch__label {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.switch_size_xs .switch__button {
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+    top: 1px;
+    left: 1px;
+}
