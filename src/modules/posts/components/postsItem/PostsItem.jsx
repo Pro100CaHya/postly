@@ -1,10 +1,13 @@
 import React, { memo } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Wrap from "../../../../components/ui/layout/wrap/Wrap";
 
 import "./PostsItem.css";
 
 const PostsItem = ({ post, view }) => {
+    const navigate = useNavigate();
+
     const classes = ["posts__item"];
 
     if (view === "grid") {
@@ -14,7 +17,10 @@ const PostsItem = ({ post, view }) => {
     console.log("Перерисовка")
 
     return (
-        <li className={classes.join(" ")}>
+        <li
+            className={classes.join(" ")}
+            onClick={() => navigate(`/posts/${post.id}`)}
+        >
             <Wrap
                 variant={{
                     padding: "10-10"

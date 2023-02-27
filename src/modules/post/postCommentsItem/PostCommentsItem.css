@@ -1,0 +1,27 @@
+.post__comment {
+    background-color: var(--comment-bg-primary-color);
+    border: 2px solid var(--comment-border-color);
+    color: var(--text-primary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.post__comment-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.post__comment-email {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+.post__comment-body {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    line-height: 150%;
+}

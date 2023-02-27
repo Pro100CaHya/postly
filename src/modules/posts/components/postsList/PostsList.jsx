@@ -16,38 +16,17 @@ const PostsList = ({ posts, isPostsLoading, postsError, view }) => {
     }
 
     return (
-        <>
+        <ul className={classes.join(" ")}>
             {
-                postsError
-                    ?
-                    <Error message={postsError} />
-                    :
-                    isPostsLoading === true
-                        ?
-                        [0, 1, 2].map((loader) =>
-                            <Row
-                                key={loader}
-                                variant={{
-                                    margin: "20-20"
-                                }}
-                            >
-                                <PostsItemSkeletonLoader />
-                            </Row>
-                        )
-                        :
-                        <ul className={classes.join(" ")}>
-                            {
-                                posts.map((post) =>
-                                    <PostsItem
-                                        key={post.id}
-                                        post={post}
-                                        view={view}
-                                    />
-                                )
-                            }
-                        </ul>
+                posts.map((post) =>
+                    <PostsItem
+                        key={post.id}
+                        post={post}
+                        view={view}
+                    />
+                )
             }
-        </>
+        </ul>
     );
 };
 

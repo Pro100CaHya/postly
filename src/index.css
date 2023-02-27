@@ -36,6 +36,13 @@
     --error-bg-color: #ffe6ff;
     --error-border-color: #fd9dff;
     --error-text-color: #39003A;
+    --spinner-loader-bg-color: #ffe6ff;
+    --spinner-loader-border-color: #fd9dff;
+    --spinner-loader-text-color: #39003A;
+    --spinner-loader-circle-color: #39003A;
+    --spinner-loader-gradient-color: linear-gradient(110deg, #d582d6 8%, #d897da 18%, #f0cdf1 33%, #e3c9e4 50%);
+    --comment-bg-primary-color: #ffe6ff;
+    --comment-border-color: #fd9dff;
 }
 
 html {

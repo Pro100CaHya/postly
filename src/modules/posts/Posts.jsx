@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { usePrevious } from "./hooks/usePrevious";
-
 import PostsMenu from "./components/postsMenu/PostsMenu";
 import PagesPostsList from "./components/pagesPostsList/PagesPostsList";
 import Row from "../../components/ui/layout/row/Row";
@@ -12,8 +10,6 @@ const Posts = () => {
     const [view, setView] = useState("list");
     const [paginationType, setPaginationType] = useState("pages");
     const [limit, setLimit] = useState(10);
-
-    const prevLimit = usePrevious(limit);
 
     const changeView = (isGridView) => {
         if (isGridView === true) {
@@ -56,14 +52,17 @@ const Posts = () => {
                 {
                     paginationType === "pages"
                         ?
-                            <PagesPostsList
-                                prevLimit={prevLimit}
-                                curLimit={limit}
-                                view={view}
-                                filter={filter}
-                            />
+                        <PagesPostsList
+                            limit={limit}
+                            view={view}
+                            filter={filter}
+                        />
                         :
-                            <InfinitePostsList />
+                        <InfinitePostsList
+                            limit={limit}
+                            view={view}
+                            filter={filter}
+                        />
                 }
             </Row>
         </div>

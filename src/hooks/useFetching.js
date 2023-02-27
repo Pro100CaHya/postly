@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { delay } from "../../../utils/delay";
+import { delay } from "../utils/delay";
 
 export const useFetching = (callback) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -8,7 +8,7 @@ export const useFetching = (callback) => {
     const fetching = async (...args) => {
         try {
             setIsLoading(true);
-            await delay(1000);
+            await delay(2000);
             await callback(...args);
         } catch (error) {
             setIsError(error.message);

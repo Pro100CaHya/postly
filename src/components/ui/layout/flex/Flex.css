@@ -10,6 +10,10 @@
     justify-content: space-between;
 }
 
+.flex_justify-content_center {
+    justify-content: center;
+}
+
 .flex_direction_column {
     flex-direction: column;
 }

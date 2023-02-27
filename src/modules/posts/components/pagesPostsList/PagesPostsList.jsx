@@ -3,46 +3,63 @@ import React, { useEffect, useState } from "react";
 import PostsList from "../postsList/PostsList";
 import Pagination from "../../../../components/ui/pagination/Pagination";
 import Row from "../../../../components/ui/layout/row/Row";
+import Error from "../../../../components/ui/error/Error";
+import PostsItemSkeletonLoader from "../../../../components/ui/postsItemSkeletonLoader/PostsItemSkeletonLoader";
 
-import { usePosts } from "../../hooks/usePosts";
-import { useFetching } from "../../hooks/useFetching";
-import { PostService } from "../../api/PostService";
+import { usePosts } from "../../../../hooks/usePosts";
+import { useFetching } from "../../../../hooks/useFetching";
+import { PostsService } from "../../api/PostsService";
 
-const PagesPostsList = ({ curLimit, prevLimit, filter, view}) => {
+const PagesPostsList = ({ limit, filter, view }) => {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
     const [totalPosts, setTotalPosts] = useState(0);
 
-    const [fetchPosts, isPostsLoading, postsError] = useFetching(async (prevLimit, curLimit, page) => {
-        debugger;
-        let fetchedPage = page;
+    const [fetchPosts, isPostsLoading, postsError] = useFetching(async (limit, page) => {
+        const response = await PostsService.getAll(limit, page);
 
-        if (prevLimit * fetchedPage < curLimit * fetchedPage) {
-            fetchedPage = Math.ceil(totalPosts / curLimit);
-            setCurrentPage(fetchedPage);
-        }
-
-        const response = await PostService.getAll(curLimit, fetchedPage);
         setPosts(response.data);
         setTotalPosts(parseInt(response.headers["x-total-count"]));
-        setTotalPages(Math.ceil(parseInt(response.headers["x-total-count"]) / curLimit));
     });
 
     const filteredPosts = usePosts(posts, filter);
 
     useEffect(() => {
-        fetchPosts(prevLimit, curLimit, currentPage);
-    }, [currentPage, curLimit]);
+        if (limit * currentPage > totalPosts && totalPosts !== 0) {
+            setCurrentPage(Math.ceil(totalPosts / limit));
+        } else {
+            fetchPosts(limit, currentPage);
+        }
+    }, [currentPage, limit]);
 
     return (
         <>
-            <PostsList
-                posts={filteredPosts}
-                isPostsLoading={isPostsLoading}
-                postsError={postsError}
-                view={view}
-            />
+            {
+                postsError
+                    ?
+                    <Error message={postsError} />
+                    :
+                    isPostsLoading === true
+                        ?
+                        [0, 1, 2].map((loader) =>
+                            <Row
+                                key={loader}
+                                variant={{
+                                    margin: "20-20"
+                                }}
+                            >
+                                <PostsItemSkeletonLoader />
+                            </Row>
+                        )
+                        :
+                        <PostsList
+                            posts={filteredPosts}
+                            isPostsLoading={isPostsLoading}
+                            postsError={postsError}
+                            view={view}
+                        />
+
+            }
             <Row
                 variant={{
                     margin: "40-0"
@@ -52,7 +69,7 @@ const PagesPostsList = ({ curLimit, prevLimit, filter, view}) => {
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     totalCount={totalPosts}
-                    limit={curLimit}
+                    limit={limit}
                     isPostsLoading={isPostsLoading}
                 />
             </Row>
