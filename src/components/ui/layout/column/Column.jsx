@@ -9,6 +9,10 @@ const Column = ({ children, variant }) => {
         classes.push(`column_margin_${variant.margin}`);
     }
 
+    if (variant?.width !== undefined) {
+        classes.push(`column_width_${variant.width}`);
+    }
+
     return (
         <div className={classes.join(" ")}>
             {children}

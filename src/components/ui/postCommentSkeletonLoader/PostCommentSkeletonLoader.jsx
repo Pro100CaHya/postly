@@ -9,10 +9,10 @@ import "./PostCommentSkeletonLoader.css";
 
 const PostCommentSkeletonLoader = () => {
     return (
-        <li className="post-comment-skeleton-loader">
+        <div className="post-comment-skeleton-loader">
             <Wrap
                 variant={{
-                    padding: "20-20"
+                    padding: "10-10"
                 }}
             >
                 <Flex>
@@ -25,7 +25,8 @@ const PostCommentSkeletonLoader = () => {
                     </Column>
                     <Column
                         variant={{
-                            margin: "10-0"
+                            margin: "10-0",
+                            width: "100pc"
                         }}
                     >
                         <Row
@@ -52,7 +53,7 @@ const PostCommentSkeletonLoader = () => {
                     </Column>
                 </Flex>
             </Wrap>
-        </li>
+        </div>
     );
 };
 

@@ -43,6 +43,8 @@
     --spinner-loader-gradient-color: linear-gradient(110deg, #d582d6 8%, #d897da 18%, #f0cdf1 33%, #e3c9e4 50%);
     --comment-bg-primary-color: #ffe6ff;
     --comment-border-color: #fd9dff;
+    --post-skeleton-loader-content-bg-color: #ffe6ff;
+    --post-skeleton-loader-content-border-color: #fd9dff;
 }
 
 html {

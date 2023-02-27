@@ -28,3 +28,7 @@
     margin-left: 10px;
     margin-right: 0px;
 }
+
+.column_width_100pc {
+    width: 100%;
+}

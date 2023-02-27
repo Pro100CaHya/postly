@@ -11,6 +11,7 @@ import { PostService } from "./api/PostService";
 import { useParams } from "react-router-dom";
 import PostsItemSkeletonLoader from "../../components/ui/postsItemSkeletonLoader/PostsItemSkeletonLoader";
 import PostCommentSkeletonLoader from "../../components/ui/postCommentSkeletonLoader/PostCommentSkeletonLoader";
+import PostSkeletonLoader from "../../components/ui/postSkeletonLoader/PostSkeletonLoader";
 
 const Post = () => {
     const params = useParams();
@@ -47,7 +48,7 @@ const Post = () => {
                     :
                     isPostLoading
                         ?
-                        <PostsItemSkeletonLoader />
+                        <PostSkeletonLoader />
                         :
                         <div className="post">
                             <Row

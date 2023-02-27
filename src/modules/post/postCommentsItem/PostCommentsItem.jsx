@@ -13,7 +13,7 @@ const PostCommentsItem = ({ comment }) => {
         <li className="post__comment">
             <Wrap
                 variant={{
-                    padding: "20-20"
+                    padding: "10-10"
                 }}
             >
                 <Flex>
