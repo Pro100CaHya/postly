@@ -6,6 +6,10 @@
     border-radius: 5px;
 }
 
+.select_width_full {
+    width: 100%;
+}
+
 .select_style_primary {
     background-color: var(--select-bg-color);
     color: var(--select-text-color);

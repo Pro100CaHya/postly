@@ -1,5 +1,8 @@
 .header {
     background-color: var(--bg-secondary-color);
+    position: fixed;
+    z-index: 6;
+    width: 100%;
 }
 
 .header__title {
@@ -10,4 +13,129 @@
     margin-left: 10px;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.header__column-button-menu {
+    display: none;
+}
+
+.header__button-menu {
+    width: 30px;
+    height: 26px;
+    position: relative;
+}
+
+.header__button-menu span {
+    position: absolute;
+    display: inline-block;
+    background-color: var(--header-menu-color);
+    height: 4px;
+    transition: 0.4s;
+}
+
+.header__button-menu span:first-child {
+    width: 50%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.header__button-menu span:nth-child(2) {
+    width: 50%;
+    top: 0;
+    left: 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__button-menu span:nth-child(3) {
+    width: 100%;
+    top: 11px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.header__button-menu span:nth-child(4) {
+    width: 50%;
+    top: 22px;
+    left: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.header__button-menu span:last-child {
+    width: 50%;
+    top: 22px;
+    left: 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__button-menu_active span:first-child {
+    top: 6px;
+    left: 3px;
+    transform: rotate(45deg);
+}
+
+.header__button-menu_active span:nth-child(2) {
+    top: 6px;
+    left: 12px;
+    transform: rotate(-45deg);
+}
+
+.header__button-menu_active span:nth-child(3) {
+    opacity: 0;
+}
+
+.header__button-menu_active span:nth-child(4) {
+    top: 16px;
+    left: 3px;
+    transform: rotate(-45deg);
+}
+
+.header__button-menu_active span:last-child {
+    top: 16px;
+    left: 12px;
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .header_opened::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 159px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 159px);
+        z-index: -2;
+        background-color: #00000050;
+    }
+
+    .header__wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header__row {
+        flex-wrap: wrap;
+    }
+
+    .header__column-button-menu {
+        display: block;
+    }
+
+    .header__column-nav {
+        display: none;
+        order: 5;
+        flex: 1 1 100%;
+        margin-top: 0px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .header__column-nav_opened {
+        display: block;
+    }
 }

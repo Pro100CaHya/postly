@@ -42,3 +42,25 @@
 .posts__item_view_grid .posts__item-body {
     -webkit-line-clamp: 4;
 }
+
+@media screen and (max-width: 768px) {
+    .posts__item_view_grid {
+        margin-bottom: 0px;
+    }
+
+    .posts__item-title {
+        -webkit-line-clamp: 2;
+    }
+
+    .posts__item-body {
+        -webkit-line-clamp: 3;
+    }
+
+    .posts__item_view_grid .posts__item-title {
+        -webkit-line-clamp: 2;
+    }
+    
+    .posts__item_view_grid .posts__item-body {
+        -webkit-line-clamp: 3;
+    }
+}

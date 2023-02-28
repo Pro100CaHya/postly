@@ -3,6 +3,10 @@
     margin-right: 10px;
 }
 
+.column_hidden {
+    display: none;
+}
+
 .column_margin_0-5 {
     margin-left: 0px;
     margin-right: 5px;

@@ -9,7 +9,7 @@ const Content = ({ children, title }) => {
         <div className="content">
             <Row
                 variant={{
-                    margin: "40-40"
+                    margin: "100-40"
                 }}
             >
                 <h2 className="content__title">

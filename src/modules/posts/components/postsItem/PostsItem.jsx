@@ -11,7 +11,7 @@ const PostsItem = ({ post, view }) => {
     const classes = ["posts__item"];
 
     if (view === "grid") {
-        classes.push("posts__item_view_grid")    
+        classes.push("posts__item_view_grid");
     }
 
     console.log("Перерисовка")

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { useFetching } from "../../hooks/useFetching";
+import { PostService } from "./api/PostService";
 
 import Row from "../../components/ui/layout/row/Row";
 import PostCommentsList from "./postCommentsList/PostCommentsList";
 import PostContent from "./postContent/PostContent";
 import Error from "../../components/ui/error/Error";
-
-import "./Post.css";
-import { useFetching } from "../../hooks/useFetching";
-import { PostService } from "./api/PostService";
-import { useParams } from "react-router-dom";
-import PostsItemSkeletonLoader from "../../components/ui/postsItemSkeletonLoader/PostsItemSkeletonLoader";
 import PostCommentSkeletonLoader from "../../components/ui/postCommentSkeletonLoader/PostCommentSkeletonLoader";
 import PostSkeletonLoader from "../../components/ui/postSkeletonLoader/PostSkeletonLoader";
+
+import "./Post.css";
 
 const Post = () => {
     const params = useParams();
@@ -19,14 +19,18 @@ const Post = () => {
     const [comments, setComments] = useState([]);
 
     const [fetchPost, isPostLoading, postError] = useFetching(async () => {
-        console.log("Fetch post");
-        const response = await PostService.getPostById(params.id);
-        setPost(response.data);
+        const postResponse = await PostService.getPostById(params.id);
+        const authorResponse = await PostService.getPostAuthor(postResponse.data.userId);
+
+        setPost({
+            ...postResponse.data,
+            user: authorResponse.data.username
+        });
     });
 
     const [fetchComments, isCommentsLoading, commentsError] = useFetching(async () => {
-        console.log("Fetch comments");
         const response = await PostService.getPostComments(params.id);
+
         setComments(response.data);
     });
 
@@ -46,7 +50,7 @@ const Post = () => {
                     ?
                     <Error />
                     :
-                    isPostLoading
+                    isPostLoading || post.title === undefined
                         ?
                         <PostSkeletonLoader />
                         :

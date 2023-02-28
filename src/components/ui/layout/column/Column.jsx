@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Column.css";
 
-const Column = ({ children, variant }) => {
+const Column = ({ children, mixin, variant }) => {
     const classes = ["column"];
 
     if (variant?.margin !== undefined) {
@@ -11,6 +11,10 @@ const Column = ({ children, variant }) => {
 
     if (variant?.width !== undefined) {
         classes.push(`column_width_${variant.width}`);
+    }
+
+    if (mixin !== undefined) {
+        classes.unshift(mixin);
     }
 
     return (

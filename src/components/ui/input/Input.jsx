@@ -12,6 +12,10 @@ const Input = ({ value, onChange, variant, type, placeholder }) => {
     if (variant?.style !== undefined) {
         classes.push(`input_style_${variant.style}`);
     }
+
+    if (variant?.width !== undefined) {
+        classes.push(`input_width_${variant.width}`);
+    }
     
     return (
         <input

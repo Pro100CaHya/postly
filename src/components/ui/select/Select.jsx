@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Select.css";
 
-const Select = ({ defaultValue, value, onChange, options, variant }) => {
+const Select = ({ defaultValue, value, onChange, options, variant, disabled }) => {
     const classes = ["select"];
 
     if (variant?.size !== undefined) {
@@ -13,11 +13,16 @@ const Select = ({ defaultValue, value, onChange, options, variant }) => {
         classes.push(`select_style_${variant.style}`);
     }
 
+    if (variant?.width !== undefined) {
+        classes.push(`select_width_${variant.width}`);
+    }
+
     return (
         <select
             className={classes.join(" ")}
             value={value}
             onChange={(e) => onChange(e.target.value)}
+            disabled={disabled}
         >
             <option value="" disabled>{defaultValue}</option>
             {

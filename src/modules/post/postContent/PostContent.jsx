@@ -13,7 +13,7 @@ const PostContent = ({post}) => {
         <>
             <Row
                 variant={{
-                    margin: "40-40"
+                    margin: "100-40"
                 }}
             >
                 <h2 className="post__title">
@@ -63,7 +63,7 @@ const PostContent = ({post}) => {
                                     }}
                                 >
                                     <span className="post__author">
-                                        Alexey
+                                        {post.user}
                                     </span>
                                 </Column>
                             </Flex>

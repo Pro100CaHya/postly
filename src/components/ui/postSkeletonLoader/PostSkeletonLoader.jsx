@@ -11,7 +11,7 @@ const PostSkeletonLoader = () => {
         <div className="post-skeleton-loader">
             <Row
                 variant={{
-                    margin: "40-40"
+                    margin: "100-40"
                 }}
             >
                 <div className="post-skeleton-loader__title">

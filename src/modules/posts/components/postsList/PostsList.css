@@ -10,3 +10,11 @@
     column-gap: 20px;
     row-gap: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .posts__list_view_grid {
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+}

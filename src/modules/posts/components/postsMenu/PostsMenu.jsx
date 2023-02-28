@@ -12,15 +12,17 @@ import InfinityNav from "../../../../components/ui/svg/infinityNav/InfinityNav";
 
 import "./PostsMenu.css";
 
-const PostsMenu = ({ filter, setFilter, limit, setLimit, changeView, paginationType, changePaginationType }) => {
+const PostsMenu = ({ paginationType, filter, setFilter, limit, setLimit, changeView, changePaginationType }) => {
     return (
         <div className="posts__menu">
             <Flex
+                mixin={"posts__menu-row"}
                 variant={{
                     alignItems: "center"
                 }}
             >
                 <Column
+                    mixin="posts__menu-select-sort"
                     variant={{
                         margin: "0-10"
                     }}
@@ -40,28 +42,26 @@ const PostsMenu = ({ filter, setFilter, limit, setLimit, changeView, paginationT
                         ]}
                         variant={{
                             size: "xs",
-                            style: "primary"
+                            style: "primary",
+                            width: "full"
                         }}
                         defaultValue="Sort by"
                         value={filter.sort}
                         onChange={(sort) => setFilter({ ...filter, sort })}
                     />
                 </Column>
-                <Column>
+                <Column mixin={"posts__menu-search"}>
                     <Input
                         variant={{
                             size: "xs",
-                            style: "primary"
+                            style: "primary",
+                            width: "full"
                         }}
                         placeholder={"Search"}
                         onChange={(e) => setFilter({ ...filter, query: e.target.value })}
                     />
                 </Column>
-                <Column
-                    variant={{
-                        margin: "10-10"
-                    }}
-                >
+                <Column mixin={"posts__menu-select-count"}>
                     <Select
                         options={[
                             {
@@ -87,9 +87,15 @@ const PostsMenu = ({ filter, setFilter, limit, setLimit, changeView, paginationT
                         defaultValue="Posts on page"
                         value={limit}
                         onChange={(limit) => setLimit(parseInt(limit))}
+                        disabled={paginationType === "infinity"}
                     />
                 </Column>
-                <Column>
+                <Column
+                    variant={{
+                        visible: window.innerWidth > 768
+                    }}
+                    mixin={"posts__menu-switch-view"}
+                >
                     <Switch
                         id={"view"}
                         onChange={changeView}
@@ -103,6 +109,7 @@ const PostsMenu = ({ filter, setFilter, limit, setLimit, changeView, paginationT
                     />
                 </Column>
                 <Column
+                    mixin={"posts__menu-switch-pagination"}
                     variant={{
                         margin: "10-0"
                     }}

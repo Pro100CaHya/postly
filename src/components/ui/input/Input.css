@@ -1,11 +1,13 @@
-.input {}
-
 .input_size_xs {
     padding: 5px 10px;
     font-size: 1.15rem;
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
+}
+
+.input_width_full {
+    width: 100%;
 }
 
 .input_style_primary {

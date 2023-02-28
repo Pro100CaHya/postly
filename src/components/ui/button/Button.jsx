@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 import "./Button.css";
 
-const Button = ({ children, onClick, mixin, variant, disabled}) => {
+const Button = forwardRef(({ children, onClick, mixin, variant, disabled}, ref) => {
     const classes = ["button"];
 
     if (variant?.size !== undefined) {
@@ -19,6 +19,7 @@ const Button = ({ children, onClick, mixin, variant, disabled}) => {
 
     return (
         <button
+            ref={ref}
             className={classes.join(" ")}
             onClick={onClick}
             disabled={disabled}
@@ -26,6 +27,6 @@ const Button = ({ children, onClick, mixin, variant, disabled}) => {
             {children}
         </button>
     );
-};
+});
 
 export default Button;
