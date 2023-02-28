@@ -1,10 +1,10 @@
 import React from "react";
 
-const ProfileSVG = () => {
+const ProfileSVG = ({ size = { width: 42, height: 42 } }) => {
     return (
         <svg
-            width="42"
-            height="42"
+            width={size?.width}
+            height={size?.height}
             viewBox="0 0 42 42"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

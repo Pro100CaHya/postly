@@ -19,6 +19,16 @@
     margin-bottom: 0;
 }
 
+.row_margin_20-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row_margin_60-20 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
 .row_margin_0-40 {
     margin-top: 0px;
     margin-bottom: 40px;

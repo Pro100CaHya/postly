@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import Column from "../../../components/ui/layout/column/Column";
-import Flex from "../../../components/ui/layout/flex/Flex";
-import Row from "../../../components/ui/layout/row/Row";
-import Wrap from "../../../components/ui/layout/wrap/Wrap";
-import UserSVG from "../../../components/ui/svg/userSVG/UserSVG";
+import Column from "../../../../components/ui/layout/column/Column";
+import Flex from "../../../../components/ui/layout/flex/Flex";
+import Row from "../../../../components/ui/layout/row/Row";
+import Wrap from "../../../../components/ui/layout/wrap/Wrap";
+import UserSVG from "../../../../components/ui/svg/userSVG/UserSVG";
 
 import "./PostContent.css";
 
-const PostContent = ({post}) => {
+const PostContent = ({ post }) => {
+    const navigate = useNavigate();
+
     return (
         <>
             <Row
@@ -62,7 +65,10 @@ const PostContent = ({post}) => {
                                         margin: "0-10"
                                     }}
                                 >
-                                    <span className="post__author">
+                                    <span
+                                        className="post__author"
+                                        onClick={() => navigate(`/users/${post.userId}`)}
+                                    >
                                         {post.user}
                                     </span>
                                 </Column>

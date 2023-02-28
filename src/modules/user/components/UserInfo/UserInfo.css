@@ -1,0 +1,28 @@
+.user__info {
+    border-radius: 10px;
+    background-color: var(--bg-user-info-color);
+    border: 2px solid var(--border-user-info-color);
+    color: var(--text-primary-color);
+}
+
+.user__name {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.user__fullname {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.user__email {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.user__phone {
+    font-size: 1.25rem;
+    font-weight: 400;
+}

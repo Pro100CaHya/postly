@@ -5,8 +5,8 @@ import { useFetching } from "../../hooks/useFetching";
 import { PostService } from "./api/PostService";
 
 import Row from "../../components/ui/layout/row/Row";
-import PostCommentsList from "./postCommentsList/PostCommentsList";
-import PostContent from "./postContent/PostContent";
+import PostCommentsList from "./components/postCommentsList/PostCommentsList";
+import PostContent from "./components/postContent/PostContent";
 import Error from "../../components/ui/error/Error";
 import PostCommentSkeletonLoader from "../../components/ui/postCommentSkeletonLoader/PostCommentSkeletonLoader";
 import PostSkeletonLoader from "../../components/ui/postSkeletonLoader/PostSkeletonLoader";

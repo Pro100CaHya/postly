@@ -1,6 +1,7 @@
 .column {
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 0;
 }
 
 .column_hidden {
@@ -30,6 +31,16 @@
 
 .column_margin_10-0 {
     margin-left: 10px;
+    margin-right: 0px;
+}
+
+.column_margin_0-20 {
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.column_margin_20-0 {
+    margin-left: 20px;
     margin-right: 0px;
 }
 

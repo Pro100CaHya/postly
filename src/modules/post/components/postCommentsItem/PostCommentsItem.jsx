@@ -1,10 +1,10 @@
 import React from "react";
 
-import Column from "../../../components/ui/layout/column/Column";
-import Row from "../../../components/ui/layout/row/Row";
-import Wrap from "../../../components/ui/layout/wrap/Wrap";
-import Flex from "../../../components/ui/layout/flex/Flex";
-import ProfileSVG from "../../../components/ui/svg/profileSVG/ProfileSVG";
+import Column from "../../../../components/ui/layout/column/Column";
+import Row from "../../../../components/ui/layout/row/Row";
+import Wrap from "../../../../components/ui/layout/wrap/Wrap";
+import Flex from "../../../../components/ui/layout/flex/Flex";
+import ProfileSVG from "../../../../components/ui/svg/profileSVG/ProfileSVG";
 
 import "./PostCommentsItem.css";
 

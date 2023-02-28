@@ -44,6 +44,8 @@
     --scrollbar-thumb-color: #39003A;
     --scrollbar-track-color: #fd9dff;
     --header-menu-color: #39003A;
+    --bg-user-info-color: #ffe6ff;
+    --border-user-info-color: #fd9dff;
 }
 
 * {
