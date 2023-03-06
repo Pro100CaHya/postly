@@ -37,3 +37,19 @@
         background-position-x: -200%;
     }
 }
+
+@media screen and (max-width: 568px) {
+    .user-info-skeleton-loader__flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-info-skeleton-loader__avatar-column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .user-info-skeleton-loader__params-column {
+        margin-top: 30px;
+    }
+}

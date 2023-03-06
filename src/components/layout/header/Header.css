@@ -105,10 +105,10 @@
         content: "";
         display: block;
         position: absolute;
-        top: 159px;
+        top: 216px;
         left: 0;
         width: 100vw;
-        height: calc(100vh - 159px);
+        height: calc(100vh - 216px);
         z-index: -2;
         background-color: #00000050;
     }
@@ -137,5 +137,12 @@
 
     .header__column-nav_opened {
         display: block;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .header_opened::after {
+        top: 204px;
+        height: calc(100vh - 204px);
     }
 }

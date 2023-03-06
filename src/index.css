@@ -46,6 +46,9 @@
     --header-menu-color: #39003A;
     --bg-user-info-color: #ffe6ff;
     --border-user-info-color: #fd9dff;
+    --users-item-bg-color: #ffe6ff;
+    --users-item-border-color: #fd9dff;
+    --users-item-avatar-bg-color: #FECBFF;
 }
 
 * {
@@ -75,4 +78,10 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+@media screen and (max-width: 568px) {
+    html {
+        font-size: 12px;
+    }
 }

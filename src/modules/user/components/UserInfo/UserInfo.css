@@ -26,3 +26,26 @@
     font-size: 1.25rem;
     font-weight: 400;
 }
+
+@media screen and (max-width: 568px) {
+    .user__info-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user__name-row {
+        margin-top: 30px;
+    }
+
+    .user__name {
+        text-align: center;
+    }
+
+    .user__avatar-column {
+        margin-right: 0;
+    }
+
+    .user__params-column {
+        margin-left: 0;
+    }
+}

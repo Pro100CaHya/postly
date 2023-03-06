@@ -14,8 +14,6 @@ const PostsItem = ({ post, view }) => {
         classes.push("posts__item_view_grid");
     }
 
-    console.log("Перерисовка")
-
     return (
         <li
             className={classes.join(" ")}

@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.flex_justify-content_flex-end {
+    justify-content: flex-end;
+}
+
 .flex_justify-content_space-between {
     justify-content: space-between;
 }

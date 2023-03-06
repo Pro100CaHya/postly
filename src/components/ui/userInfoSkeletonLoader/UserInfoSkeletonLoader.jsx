@@ -15,8 +15,9 @@ const UserInfoSkeletonLoader = () => {
                     padding: "40-40"
                 }}
             >
-                <Flex>
+                <Flex mixin={"user-info-skeleton-loader__flex"}>
                     <Column
+                        mixin={"user-info-skeleton-loader__avatar-column"}
                         variant={{
                             margin: "0-20"
                         }}
@@ -24,6 +25,7 @@ const UserInfoSkeletonLoader = () => {
                         <div className="user-info-skeleton-loader__avatar"></div>
                     </Column>
                     <Column
+                        mixin={"user-info-skeleton-loader__params-column"}
                         variant={{
                             margin: "20-0",
                             width: "100pc"

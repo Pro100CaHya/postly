@@ -19,8 +19,11 @@ const UserInfo = ({ user }) => {
                     padding: "40-40"
                 }}
             >
-                <Flex>
+                <Flex
+                    mixin={"user__info-content"}
+                >
                     <Column
+                        mixin={"user__avatar-column"}
                         variant={{
                             margin: "0-20"
                         }}
@@ -33,11 +36,13 @@ const UserInfo = ({ user }) => {
                         />
                     </Column>
                     <Column
+                        mixin={"user__params-column"}
                         variant={{
                             margin: "20-0"
                         }}
                     >
                         <Row
+                            mixin={"user__name-row"}
                             variant={{
                                 margin: "0-20"
                             }}
@@ -48,7 +53,7 @@ const UserInfo = ({ user }) => {
                         </Row>
                         <Row
                             variant={{
-                                margin: "60-20"
+                                margin: "20-20"
                             }}
                         >
                             <Flex
@@ -76,7 +81,7 @@ const UserInfo = ({ user }) => {
                         </Row>
                         <Row
                             variant={{
-                                margin: "20-20"
+                                margin: "20-0"
                             }}
                         >
                             <Flex
@@ -104,7 +109,7 @@ const UserInfo = ({ user }) => {
                         </Row>
                         <Row
                             variant={{
-                                margin: "20-20"
+                                margin: "20-0"
                             }}
                         >
                             <Flex

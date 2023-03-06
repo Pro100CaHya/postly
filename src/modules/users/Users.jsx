@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-import PostsMenu from "./components/postsMenu/PostsMenu";
-import PagesPostsList from "./components/pagesPostsList/PagesPostsList";
+import UsersMenu from "./components/usersMenu/UsersMenu";
+import PagesUsersList from "./components/pagesUsersList/PagesUsersList";
 import Row from "../../components/ui/layout/row/Row";
-import InfinitePostsList from "./components/infinitePostsList/InfinitePostsList";
+import InfiniteUsersList from "./components/infiniteUsersList/InfiniteUsersList";
 
-const Posts = () => {
+const Users = () => {
     const [filter, setFilter] = useState({ sort: "", query: "" });
     const [view, setView] = useState("list");
     const [paginationType, setPaginationType] = useState("pages");
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(5);
 
     const changeView = (isGridView) => {
         if (isGridView === true) {
@@ -28,13 +28,13 @@ const Posts = () => {
     }
 
     return (
-        <div className="posts">
+        <div className="users">
             <Row
                 variant={{
                     margin: "0-40"
                 }}
             >
-                <PostsMenu
+                <UsersMenu
                     filter={filter}
                     setFilter={setFilter}
                     limit={limit}
@@ -52,13 +52,13 @@ const Posts = () => {
                 {
                     paginationType === "pages"
                         ?
-                        <PagesPostsList
+                        <PagesUsersList
                             limit={limit}
                             view={view}
                             filter={filter}
                         />
                         :
-                        <InfinitePostsList
+                        <InfiniteUsersList
                             limit={limit}
                             view={view}
                             filter={filter}
@@ -69,4 +69,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default Users;
