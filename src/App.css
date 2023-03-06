@@ -3,3 +3,56 @@
     display: flex;
     flex-direction: column;
 }
+
+[data-dark-mode="true"] {
+    --bg-primary-color: #520c53;
+    --bg-secondary-color: #6a096c;
+    --text-primary-color: #fedfff;
+    --text-secondary-color: #fff0ff;
+    --text-tertiary-color: #fff7ff;
+    --button-bg-primary-color: #d245d4;
+    --button-text-primary-color: #39003A;
+    --button-border-primary-color: #39003A;
+    --button-bg-secondary-color: #ffe6ff;
+    --button-text-secondary-color: #39003A;
+    --button-border-secondary-color: #fd9dff;
+    --button-bg-secondary-active-color: #ffd4ff;
+    --button-text-secondary-active-color: #39003A;
+    --button-border-secondary-active-color: #fd9dff;
+    --button-bg-secondary-disabled-color: #eeceee;
+    --button-text-secondary-disabled-color: #39003A;
+    --button-border-secondary-disabled-color: #fd9dff;
+    --post-bg-primary-color: #7a0f7b;
+    --post-border-color: #3e0c3f;
+    --select-bg-color: #7a0f7b;
+    --select-text-color: #fedfff;
+    --select-border-color: #3e0c3f;
+    --input-bg-color: #7a0f7b;
+    --input-text-color: #fedfff;
+    --input-placeholder-color: #fedfff50;
+    --input-border-color: #3e0c3f;
+    --switch-bg-color: #7a0f7b;
+    --switch-button-color: #fc63ff;
+    --switch-border-color: #3e0c3f;
+    --skeleton-loader-gradient-color: linear-gradient(110deg, #d245d4 8%, #c440c6 18%, #c03bc2 33%, #ae2ab1 50%);
+    --error-bg-color: #d245d4;
+    --error-border-color: #39003A;
+    --error-text-color: #fedfff;
+    --spinner-loader-bg-color: #d245d4;
+    --spinner-loader-border-color: #39003A;
+    --spinner-loader-text-color: #fedfff;
+    --spinner-loader-circle-color: #39003A;
+    --spinner-loader-gradient-color: linear-gradient(110deg, #fb00ff 25%, #800082 50%, #ac52ad 75%, #feccff 100%);
+    --comment-bg-primary-color: #d245d4;
+    --comment-border-color: #39003A;
+    --post-skeleton-loader-content-bg-color: #d245d4;
+    --post-skeleton-loader-content-border-color: #39003A;
+    --scrollbar-thumb-color: #fd9dff;
+    --scrollbar-track-color: #39003A;
+    --header-menu-color: #fedfff;
+    --bg-user-info-color: #ffe6ff;
+    --border-user-info-color: #39003A;
+    --users-item-bg-color: #d245d4;
+    --users-item-border-color: #39003A;
+    --users-item-avatar-bg-color: #fc63ff;
+}

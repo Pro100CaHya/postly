@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 import Wrap from "../../ui/layout/wrap/Wrap";
 import Flex from "../../ui/layout/flex/Flex";
@@ -6,12 +7,15 @@ import Column from "../../ui/layout/column/Column";
 import PostlySVG from "../../ui/svg/postlySVG/PostlySVG";
 import Nav from "../../nav/Nav";
 import Button from "../../ui/button/Button";
-import ProfileSVG from "../../ui/svg/profileSVG/ProfileSVG";
 
 import "./Header.css";
+import DarkThemeSVG from "../../ui/svg/darkThemeSVG/DarkThemeSVG";
+import LightThemeSVG from "../../ui/svg/lightThemeSVG/LightThemeSVG";
 
 const Header = () => {
     const [isOpened, setIsOpened] = useState(false);
+    const {darkMode, setDarkMode} = useContext(DarkModeContext);
+
     const buttonMenu = useRef();
 
     useEffect(() => {
@@ -44,7 +48,7 @@ const Header = () => {
                         >
                             <Button
                                 ref={buttonMenu}
-                                mixin={"header__button-menu"}
+                                mixin={isOpened ? "header__button-menu header__button-menu_active": "header__button-menu"}
                                 variant={{
                                     size: "0",
                                     style: "transparent"
@@ -104,12 +108,19 @@ const Header = () => {
                             }}
                         >
                             <Button
+                                onClick={() => setDarkMode((prev) => !prev)}
                                 variant={{
                                     size: "0",
                                     style: "transparent"
                                 }}
                             >
-                                <ProfileSVG />
+                                {
+                                    darkMode === true
+                                        ?
+                                        <DarkThemeSVG />
+                                        :
+                                        <LightThemeSVG />
+                                }
                             </Button>
                         </Column>
                     </Flex>
